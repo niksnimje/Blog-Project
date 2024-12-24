@@ -2,7 +2,13 @@ import React from 'react'
 
 function Create() {
   return (
-    <div>Create</div>
+    <>
+      <form action="">
+        <input type="text" />
+        <input type="text" />
+        <input type="submit" />
+      </form>
+    </>
   )
 }
 

@@ -18,7 +18,7 @@ function Singin() {
         })
         .then((res)=>{
             toast.success(res.data.message)
-            navigate("/")
+            navigate("/home")
         })
         .catch((err)=>{
             toast.error(err.response.data.message)
