@@ -2,16 +2,20 @@ import React from 'react'
 import { Link, useParams } from "react-router-dom";
 import { Button, Col, Container, Modal, Row } from 'react-bootstrap';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 
 function NotesCard({title,body,image,id}) {
 
-  const {notesId}=useParams()
 
-  const handelDelete=()=>{
-    axios.delete(`${import.meta.env.VITE_BASEURL}/notes/delete/${notesId}`)
+  const handelDelete=(id)=>{
+    axios.delete(`${import.meta.env.VITE_BASEURL}/notes/delete/${id}`,{
+      withCredentials:true
+    })
     .then((res)=>{
       console.log(res)
+      toast.success(res?.data?.message ||  "Note deleted successfully")
+      window.location.reload()
     })
     .catch((err)=>{
       console.log(err)
@@ -46,12 +50,12 @@ function NotesCard({title,body,image,id}) {
                 Edit
                 </Link>
               </Button> 
-              <Button variant='outline-danger' onClick={handelDelete} >
+              <Button variant='outline-danger' onClick={()=>handelDelete(id)} >
                 Delete
               </Button>
             </div>
     </div>
-      {/* </div> */}
+      
     </>
   )
 }
