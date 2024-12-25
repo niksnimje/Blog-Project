@@ -12,6 +12,7 @@ export default function Navbaar() {
              
               <Link to="/about" style={{fontSize:"20px",textDecoration:"none",color:"white"}}>About Us</Link>
               <Link to="/notes"  style={{fontSize:"20px",textDecoration:"none",paddingLeft:"30px",color:"white"}}>Your Notes</Link>
+              <Link to="/create"  style={{fontSize:"20px",textDecoration:"none",paddingLeft:"30px",color:"white"}}>Create Notes</Link>
               <Link to="/singin" style={{fontSize:"20px",textDecoration:"none",color:"white"}}><li>Get Started</li></Link>
               
             </ul>

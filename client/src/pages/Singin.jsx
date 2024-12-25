@@ -17,6 +17,7 @@ function Singin() {
             withCredentials:true
         })
         .then((res)=>{
+            localStorage.setItem("userData",JSON.stringify(res.data.userData))
             toast.success(res.data.message)
             navigate("/home")
         })

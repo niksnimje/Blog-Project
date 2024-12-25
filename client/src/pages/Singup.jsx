@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from "axios"
+import "./Singin.css"
 import { ToastContainer, toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 
@@ -47,6 +48,9 @@ function Singup() {
                 <i></i>
             </div>
             <input type="submit" value="SingUp" />
+            <div class="Singin-links">
+                <a href="/singin">Sign Up</a>
+            </div>
         </form>
         </div>
             

@@ -5,6 +5,10 @@ import About from './pages/About'
 import Singin from './pages/Singin'
 import Singup from './pages/Singup'
 import Notes from './pages/Notes'
+import Create from './pages/Create'
+import DescriptionNotes from './pages/DescriptionNotes'
+import Privateroutes from './components/Privateroutes'
+import UpdateNotes from './pages/UpdateNotes'
 
 function Allroutes() {
   return (
@@ -13,7 +17,18 @@ function Allroutes() {
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/notes" element={<Notes />} />
+            <Route path="/notes" element={
+            <Privateroutes>
+              <Notes />
+            </Privateroutes>
+            } />
+            <Route path="/description/:notesId" element={<DescriptionNotes />} />
+            <Route path="/create" element={
+            <Privateroutes>
+              <Create />
+            </Privateroutes>  
+            } />
+            <Route path="/editnotes/:notesId" element={<UpdateNotes />} />
             <Route path="/singin" element={<Singin />} />
             <Route path="/singup" element={<Singup />} />
         </Routes>
